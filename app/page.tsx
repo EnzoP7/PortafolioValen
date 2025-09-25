@@ -21,6 +21,8 @@ import {
   Award,
   Calendar,
   MapPin,
+  User,
+  FolderOpen,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -86,32 +88,74 @@ export default function Portfolio() {
                     <Menu className="h-6 w-6" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-80">
-                  <div className="flex flex-col space-y-6 mt-8">
-                    <a
-                      href="#about"
-                      className="text-lg font-medium text-slate-600 hover:text-violet-600 dark:text-slate-300 dark:hover:text-violet-400 transition-colors"
-                    >
-                      About
-                    </a>
-                    <a
-                      href="#education"
-                      className="text-lg font-medium text-slate-600 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400 transition-colors"
-                    >
-                      Education
-                    </a>
-                    <a
-                      href="#projects"
-                      className="text-lg font-medium text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors"
-                    >
-                      Projects
-                    </a>
-                    <a
-                      href="#contact"
-                      className="text-lg font-medium text-slate-600 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400 transition-colors"
-                    >
-                      Contact
-                    </a>
+                <SheetContent
+                  side="right"
+                  className="w-80 bg-gradient-to-b from-white via-violet-50/30 to-cyan-50/30 dark:from-slate-900 dark:via-slate-800/90 dark:to-slate-900 border-l border-violet-200/50 dark:border-slate-700"
+                >
+                  <div className="relative h-full">
+                    {/* Header con gradiente */}
+                    <div className="text-center py-6 border-b border-violet-200/30 dark:border-slate-700/50">
+                      <h3 className="text-xl font-bold bg-gradient-to-r from-violet-600 to-cyan-600 bg-clip-text text-transparent">
+                        Menú
+                      </h3>
+                    </div>
+
+                    {/* Navigation Links */}
+                    <div className="flex flex-col space-y-3 mt-8 px-4">
+                      <a
+                        href="#about"
+                        className="group flex items-center p-4 rounded-xl text-slate-700 hover:text-violet-600 dark:text-slate-300 dark:hover:text-violet-400 transition-all duration-300 hover:bg-violet-100/50 dark:hover:bg-violet-900/20 hover:translate-x-2"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center mr-3 group-hover:bg-violet-200 dark:group-hover:bg-violet-800/40 transition-colors">
+                          <User className="w-5 h-5" />
+                        </div>
+                        <span className="text-lg font-medium">About</span>
+                      </a>
+
+                      <a
+                        href="#education"
+                        className="group flex items-center p-4 rounded-xl text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400 transition-all duration-300 hover:bg-cyan-100/50 dark:hover:bg-cyan-900/20 hover:translate-x-2"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center mr-3 group-hover:bg-cyan-200 dark:group-hover:bg-cyan-800/40 transition-colors">
+                          <GraduationCap className="w-5 h-5" />
+                        </div>
+                        <span className="text-lg font-medium">Education</span>
+                      </a>
+
+                      <a
+                        href="#projects"
+                        className="group flex items-center p-4 rounded-xl text-slate-700 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-all duration-300 hover:bg-blue-100/50 dark:hover:bg-blue-900/20 hover:translate-x-2"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-3 group-hover:bg-blue-200 dark:group-hover:bg-blue-800/40 transition-colors">
+                          <FolderOpen className="w-5 h-5" />
+                        </div>
+                        <span className="text-lg font-medium">Projects</span>
+                      </a>
+
+                      <a
+                        href="#contact"
+                        className="group flex items-center p-4 rounded-xl text-slate-700 hover:text-green-600 dark:text-slate-300 dark:hover:text-green-400 transition-all duration-300 hover:bg-green-100/50 dark:hover:bg-green-900/20 hover:translate-x-2"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3 group-hover:bg-green-200 dark:group-hover:bg-green-800/40 transition-colors">
+                          <Mail className="w-5 h-5" />
+                        </div>
+                        <span className="text-lg font-medium">Contact</span>
+                      </a>
+                    </div>
+
+                    {/* Footer decorativo */}
+                    <div className="absolute bottom-8 left-4 right-4">
+                      <div className="p-4 rounded-xl bg-gradient-to-r from-violet-500/10 to-cyan-500/10 border border-violet-200/30 dark:border-slate-700/50 text-center">
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                          Portfolio 2025
+                        </p>
+                        <div className="flex justify-center mt-2 space-x-2">
+                          <div className="w-2 h-2 rounded-full bg-violet-400"></div>
+                          <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
+                          <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -362,7 +406,7 @@ export default function Portfolio() {
                         <div className="flex-shrink-0">
                           <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center">
                             <img
-                              src="/LogoORTROJO.WEBP"
+                              src="/LogoORT_ROJOOO.png"
                               alt="Universidad ORT Uruguay Logo"
                               className="w-full h-full object-cover"
                             />
@@ -372,7 +416,7 @@ export default function Portfolio() {
                           <h4 className="font-semibold text-slate-900 dark:text-white text-lg mb-1">
                             Licenciatura en Sistemas
                           </h4>
-                          <p className="text-violet-800 dark:text-violet-600 font-medium mb-2">
+                          <p className="text-blue-500 dark:text-blue-500 font-medium mb-2">
                             Universidad ORT Uruguay
                           </p>
                           <div className="flex items-center text-sm text-slate-500 mb-3">
@@ -395,7 +439,7 @@ export default function Portfolio() {
                         <div className="flex-shrink-0">
                           <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center">
                             <img
-                              src="/LogoORTROJO.WEBP"
+                              src="/LogoORT_ROJOOO.png"
                               alt="Universidad ORT Uruguay Logo"
                               className="w-full h-full object-cover"
                             />
@@ -707,7 +751,7 @@ export default function Portfolio() {
             </p>
           </div>
           <p className="text-slate-500 dark:text-slate-400 text-sm">
-            © 2024 Valentina Bentancor. Desarrollado con ❤️ usando Next.js,
+            © 2025 Valentina Bentancor. Desarrollado con ❤️ usando Next.js,
             Tailwind CSS & Framer Motion
           </p>
         </div>
